@@ -2,10 +2,29 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="demo.css" />
   </head>
   <body>
-    <div ng-controller="SudokuCtrl">
-      Hello {{test}}!
+    <div ng-controller="SudokuCtrl">
+      <section class="sudoku-wrapper">
+        <ul class="rectangle-wrapper" ng-repeat="rectangle in rectangleList">
+          <li
+            class="rectangle-item"
+            ng-repeat="item in rectangle"
+            ng-class="{'item-hover': item.hover, 'mark-number': item.number.toString().length > 1}"
+            ng-mouseover="hoverItem($parent.$index, $index)"
+            ng-mouseleave="leaveItem()"
+            ng-dblclick="entryNumber($parent.$index, $index)">
+            <span ng-show="!item.edit">{{item.number == '0' ? '' : item.number}}</span>
+            <input
+              class="edit-box"
+              autofocus="true"
+              ng-show="item.edit"
+              ng-model="item.number"
+              ng-keyup="editNumber($event, $parent.$index, $index)"/>
+          </li>
+        </ul>
+      </section>
     </div>
   </body>
   <script src="js/angular-1.3.0.js"></script>

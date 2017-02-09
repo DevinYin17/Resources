@@ -1,0 +1,155 @@
+.os-tree-select-wrap {
+  font-size: 0;
+}
+
+.tree-node {
+  position: relative;
+  display: inline-block;
+  height: 27px;
+  padding-top: 10px;
+  line-height: 17px;
+  color: #555;
+}
+
+.tree-node:before {
+  content: '';
+  width: 12px;
+  height: 100%;
+  display: block;
+  border-left: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  position: absolute;
+  top: -8px;
+}
+
+.tree-node .tree-node-checkbox {
+  padding: 0 0 0 12px;
+  z-index: 2;
+}
+
+.tree-node .tree-node-checkbox:hover .folder-icon {
+  background-image: url("/images/core/role_primarymenu_hover.png");
+}
+
+.tree-node .tree-node-checkbox:hover .file-icon {
+  background-image: url("/images/core/role_submenu_hover.png");
+}
+
+.tree-node .tree-node-checkbox:hover .down-icon {
+  border-top-color: #37c3aa;
+}
+
+.tree-node .tree-node-checkbox label {
+  padding-left: 24px;
+}
+
+.tree-node .tree-node-checkbox label span {
+  padding-left: 18px;
+  display: inline;
+}
+
+.tree-node .folder-icon {
+  background-image: url("/images/core/role_primarymenu_default.png");
+  background-size: 14px 16px;
+}
+
+.tree-node .folder-icon.up-icon:after, .tree-node .folder-icon.down-icon:after {
+  content: '';
+  width: 0;
+  height: 0;
+  font-size: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  display: inline-block;
+  margin: 0 0 3px 6px;
+}
+
+.tree-node .folder-icon.up-icon:after {
+  border-bottom: 4px solid #37c3aa;
+}
+
+.tree-node .folder-icon.down-icon:after {
+  border-top: 4px solid #bbb;
+}
+
+.tree-node .file-icon {
+  background-image: url("/images/core/role_submenu_default.png");
+  background-size: 14px 16px;
+}
+
+.tree-node .node-selected .folder-icon {
+  background-image: url("/images/core/role_primarymenu_hover.png");
+  color: #37c3aa;
+}
+
+.tree-node .over-checkbox-wrap {
+  position: absolute;
+  left: 30px;
+  right: 0;
+  top: 10px;
+  bottom: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.tree-node .over-checkbox-wrap:hover+ .tree-node-checkbox .folder-icon {
+  background-image: url("/images/core/role_primarymenu_hover.png");
+}
+
+.tree-node .over-checkbox-wrap:hover+ .tree-node-checkbox .folder-icon.down-icon:after {
+  border-top-color: #37c3aa;
+}
+
+.tree-node .over-checkbox-wrap:hover+ .tree-node-checkbox .file-icon {
+  background-image: url("/images/core/role_submenu_hover.png");
+}
+
+.tree-node .over-checkbox-wrap:hover+ .tree-node-checkbox label {
+  color: #37c3aa;
+}
+
+.tree-node .over-checkbox-wrap:hover+ .tree-node-checkbox label:before {
+  border-color: #37c3aa;
+}
+
+.sub-menu-0 {
+  margin: 0;
+}
+
+.sub-menu-1 {
+  margin-left: 31px;
+}
+
+.sub-menu-1:last-child .sub-menu-line-2 {
+  display: none;
+}
+
+.sub-menu-2 {
+  margin-left: 43px;
+  position: relative;
+}
+
+.sub-menu-2 .sub-menu-line-2 {
+  position: absolute;
+  display: block;
+  height: 100%;
+  border-left: 1px solid #e2e2e2;
+  top: -8px;
+  left: -43px;
+}
+
+.tree-node-0:before {
+  content: none !important;
+}
+
+.tree-node-0 .over-checkbox-wrap {
+  left: 20px !important;
+}
+
+.tree-node-0 .tree-node-checkbox {
+  padding-left: 0 !important;
+}
+
+.sub-menu-line-0, .sub-menu-line-1 {
+  display: none;
+}

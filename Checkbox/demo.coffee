@@ -1,22 +1,19 @@
 ( ->
   module = angular.module 'app', []
-  CheckBox = ->
+  CheckBox = ($timeout) ->
     return {
       restrict: 'E'
       scope:
         ngModel: '='
         onChange: '&'
-      template: '<div ng-click="check()">
-                  <input type="checkbox" ng-model="ngModel" ng-click="stopBubble($event)"/>
-                </div>'
+      replace: true
+      transclude: true
+      template: '<label class="checkbox" ng-class="{\'check\': ngModel}" ng-click="check()" ng-transclude></label>'
       link: (scope, element, attrs) ->
         scope.check = ->
-          scope.onChange()() if angular.isFunction scope.onChange()
-          console.log scope.ngModel
-
-        scope.stopBubble = (event) ->
-          event.preventDefault()
-          event.stopPropagation()
+          scope.ngModel = not scope.ngModel
+          $timeout ->
+            scope.onChange()() if angular.isFunction scope.onChange()
     }
 
   CheckCtrl = ($scope) ->
@@ -25,7 +22,7 @@
     $scope.checkCallBcak = ->
       console.log $scope.check
 
-  module.directive 'checkBox', CheckBox
+  module.directive 'checkBox', ['$timeout', CheckBox]
   module.controller 'CheckCtrl', CheckCtrl
   CheckCtrl.$inject = ['$scope']
 )()

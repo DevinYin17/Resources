@@ -5,6 +5,10 @@
     cursor: pointer;
 }
 
+.checkbox input {
+    display: none;
+}
+
 .checkbox:hover {
     color: #37c3aa;
 }

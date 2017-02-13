@@ -4,6 +4,10 @@
   line-height: 18px;
   cursor: pointer;
 
+  input {
+    display: none;
+  }
+
   &:hover {
     color: #37c3aa;
 

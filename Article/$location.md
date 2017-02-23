@@ -34,4 +34,6 @@ if(newUrl.hasQueryString()) {
           $location.url(newUrl) or $location.path(newUrl)
      }
 }
+
+$location.url('/a/b?c=d') = $location.path('/a/b').search({c: 'd'})
 ```

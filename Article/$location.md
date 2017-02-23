@@ -21,7 +21,8 @@ $location.url(newUrl) -> http://{path:/a/b}？{query string:c=d}
 ```
 if(newUrl.hasQueryString()) {
      if(oldUrl.hasQueryString()) {
-          $location.url(newUrl) .search($location.search())
+          oldQueryString = $location.search()
+          $location.url(newUrl).search(Object.assign($location.search(), oldQueryString))
      } else {
           $location.url(newUrl)
      }

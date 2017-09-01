@@ -3,6 +3,7 @@ var $player = $('.player');
 var mapArray = [];
 var mapLength = 20;
 var palyStepIndex = 0;
+var palyStepOldIndex = 0;
 
 // width/height: 50, margin: 10
 // 50 + 10 = 60
@@ -47,17 +48,19 @@ function play() {
 }
 
 function moveHandle(point) {
+  palyStepOldIndex = palyStepIndex;
   palyStepIndex = (palyStepIndex + point) % mapLength;
 
-  if ($player && $player.length) {
-    var currentX = $player.css('left').slice(0, -2);
-    var currentY = $player.css('top').slice(0, -2);
-    var targetX = mapArray[palyStepIndex].x;
-    var targetY = mapArray[palyStepIndex].y;
-
-    move(targetX, currentX, 'left');
-    move(targetY, currentY, 'top');
-  }
+  var i = palyStepOldIndex + 1;
+  var timer = setInterval(function() {
+    if (i < palyStepOldIndex + point + 1) {
+      $player.css('left', mapArray[i % mapLength].x + 'px');
+      $player.css('top', mapArray[i % mapLength].y + 'px');
+      i++;
+    } else {
+      timer = clearInterval(timer);
+    }
+  }, 100);
 }
 
 function move(target, current, direction) {

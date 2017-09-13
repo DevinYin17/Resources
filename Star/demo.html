@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <style>
+    .star {
+      display: inline-block;
+    }
+
+    .star:hover::before {
+      background: #37c3aa;
+    }
+
+    .star::before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <i class="star">
+      <i class="star">
+        <i class="star">
+          <i class="star">
+            <i class="star">
+            </i>
+          </i>
+        </i>
+      </i>
+    </i>
+    <div>
+      <a href="http://dabblet.com/gist/35cf88adc75b5ea2c06027857f75598e" target="_blank">online demo</a>
+    </div>
+  </body>
+</html>

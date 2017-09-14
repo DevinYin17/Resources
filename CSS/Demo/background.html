@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <style>
+    i {
+      display: inline-block;
+      width:200px;
+      height: 200px;
+    }
+
+    .gradient {
+      background: linear-gradient(to right, red 20%, green 80%);
+    }
+
+    .vertical {
+      background: linear-gradient(to right, red 50%, green 50%);
+      background-size: 50px 100%;
+    }
+
+    .diagonal-1 {
+      background: linear-gradient(45deg,
+                                  red 25%,
+                                  green 0, green 50%,
+                                  red 0, red 75%,
+                                  green 0);
+      background-size: 60px 60px;
+    }
+
+    .diagonal-2 {
+      background: repeating-linear-gradient(45deg,
+                                            red, red 25%,
+                                            green 0, green 50%);
+      background-size: 62px 62px;
+    }
+
+    .tilt {
+      background: repeating-linear-gradient(60deg,
+                                            red 0 20px,
+                                            green 0 40px);
+      // background: repeating-linear-gradient(60deg,  red, red 20px, green 0, green 40px);
+    }
+    </style>
+  </head>
+  <body>
+    <i class="gradient"></i>
+    <i class="vertical"></i>
+    <i class="diagonal-1"></i>
+    <i class="diagonal-2"></i>
+    <i class="tilt"></i>
+    <div>
+      <a href="http://dabblet.com/gist/d3ff0087de45bfa1fd9db29f92412801" target="_blank">online demo</a>
+    </div>
+  </body>
+</html>

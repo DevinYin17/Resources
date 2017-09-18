@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <style>
+    i {
+      display: inline-block;
+      width:200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .dot-regular {
+      background-image: radial-gradient(green 30%, transparent 0);
+      background-size: 30px;
+    }
+
+    .dot-crisscross  {
+      background-image: radial-gradient(green 30%, transparent 0),
+                        radial-gradient(green 30%, transparent 0);
+      background-size: 60px;
+      background-position: 0 0, 30px 30px;
+    }
+
+    .checkerboard-4 {
+      background-image: linear-gradient(45deg, green 25%, transparent 0),
+                        linear-gradient(45deg, green 25%, transparent 0),
+                        linear-gradient(45deg, transparent 75%, green 0),
+                        linear-gradient(45deg, transparent 75%, green 0);
+      background-position: 0 30px, 15px 15px, 15px 15px, 30px 0;
+      background-size: 30px;
+    }
+
+    .checkerboard-2 {
+      background-image: linear-gradient(45deg, green 25%, transparent 0, transparent 75%, green 0),
+                        linear-gradient(45deg, green 25%, transparent 0, transparent 75%, green 0);
+      background-position: 0 0, 15px 15px;
+      background-size: 30px;
+    }
+
+    .conic {
+      background-image: repeating-conic-gradient(transparent 0, transparent 25%, green 0, green 50%);
+      background-size:30px;
+    }
+    </style>
+  </head>
+  <body>
+    <i class="dot-regular"></i>
+    <i class="dot-crisscross"></i>
+    <i class="checkerboard-4"></i>
+    <i class="checkerboard-2"></i>
+    <i class="conic"></i>
+    <div>
+      <a href="http://dabblet.com/gist/7354fd818877333a88d107244490436d" target="_blank">online demo</a>
+    </div>
+  </body>
+</html>

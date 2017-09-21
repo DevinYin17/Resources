@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <style>
+    .loading {
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+
+    .loading i {
+      position: absolute;
+      width: 2px;
+      height: 8px;
+      border-radius: 1px;
+      background-color: #777;
+      animation-name: loading;
+      animation-duration: .6s;
+      animation-iteration-count: infinite;
+    }
+
+    .loading i:nth-child(1) {
+      left: 0;
+      top: -10px;
+      animation-delay: -.55s;
+    }
+
+    .loading i:nth-child(2) {
+      left: 5px;
+      top: -8.7px;
+      transform: rotate(30deg);
+      animation-delay: -.5s;
+    }
+
+    .loading i:nth-child(3) {
+      left: 8.7px;
+      top: -5px;
+      transform: rotate(60deg);
+      animation-delay: -.45s;
+    }
+
+    .loading i:nth-child(4) {
+      left: 10px;
+      top: 0;
+      transform: rotate(90deg);
+      animation-delay: -.4s;
+    }
+
+    .loading i:nth-child(5) {
+      left: 8.7px;
+      top: 5px;
+      transform: rotate(120deg);
+      animation-delay: -.35s;
+    }
+
+    .loading i:nth-child(6) {
+      left: 5px;
+      top: 8.7px;
+      transform: rotate(150deg);
+      animation-delay: -.3s;
+    }
+
+    .loading i:nth-child(7) {
+      left: 0;
+      top: 10px;
+      animation-delay: -.25s;
+    }
+
+    .loading i:nth-child(8) {
+      left: -5px;
+      top: 8.7px;
+      transform: rotate(30deg);
+      animation-delay: -.2s;
+    }
+
+    .loading i:nth-child(9) {
+      left: -8.7px;
+      top: 5px;
+      transform: rotate(60deg);
+      animation-delay: -.15s;
+    }
+
+    .loading i:nth-child(10) {
+      left: -10px;
+      top: 0;
+      transform: rotate(90deg);
+      animation-delay: -.1s;
+    }
+
+    .loading i:nth-child(11) {
+      left: -8.7px;
+      top: -5px;
+      transform: rotate(120deg);
+      animation-delay: -.05s;
+    }
+
+    .loading i:nth-child(12) {
+      left: -5px;
+      top: -8.7px;
+      transform: rotate(150deg);
+      animation-delay: 0;
+    }
+
+    @keyframes loading {
+      0% {
+        opacity: 0.2;
+      }
+
+      50% {
+        opacity: .6;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="loading">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+    </div>
+  </body>
+</html>

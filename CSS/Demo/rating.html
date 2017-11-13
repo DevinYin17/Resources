@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <style>
+    .star {
+      display: inline-block;
+      position: relative;
+      z-index:1;
+    }
+
+    .star:hover::before {
+      background: #37c3aa;
+    }
+
+    .star:hover::after {
+      display: block;
+    }
+
+    .star::before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+
+    .star::after {
+      content: attr(data-star);
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background-color: #fff;
+    }
+    </style>
+  </head>
+  <body>
+    <i class="star" data-star="1">
+      <i class="star" data-star="2">
+        <i class="star" data-star="3">
+          <i class="star" data-star="4">
+            <i class="star" data-star="5">
+            </i>
+          </i>
+        </i>
+      </i>
+    </i>
+    <div>
+      <a href="http://dabblet.com/gist/5bd114c98cedd2c5f472d1b6feb9758a" target="_blank">online demo</a>
+    </div>
+  </body>
+</html>
